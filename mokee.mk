@@ -12,5 +12,21 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/mokee.mk
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+
+# Inherit device configuration
+$(call inherit-product, device/pifoundation/rpi3/device.mk)
+
+# Inherit some common MoKee stuff.
+$(call inherit-product, vendor/mk/config/common_full.mk)
+
+PRODUCT_NAME := mk_rpi3
+PRODUCT_DEVICE := rpi3
+PRODUCT_MANUFACTURER := pifoundation
+PRODUCT_BRAND := pifoundation
+PRODUCT_MODEL := Raspberry Pi 3
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.mk.maintainer=XiNGRZ

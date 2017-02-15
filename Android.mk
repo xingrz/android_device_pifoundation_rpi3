@@ -12,5 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/mokee.mk
+LOCAL_PATH := $(call my-dir)
+
+ifeq ($(TARGET_DEVICE),rpi3)
+
+include $(call all-makefiles-under,$(LOCAL_PATH))
+
+endif
