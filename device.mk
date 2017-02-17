@@ -42,7 +42,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio_policy_configuration.xml:system/etc/audio_policy_configuration.xml
 
 PRODUCT_PACKAGES += \
-    audio.primary.$(TARGET_PRODUCT) \
+    audio.primary.rpi3 \
     audio.usb.default
 
 # Bluetooth
@@ -52,8 +52,8 @@ PRODUCT_COPY_FILES += \
 # Display
 PRODUCT_PACKAGES += \
     libGLES_mesa \
-    gralloc.$(TARGET_PRODUCT) \
-    hwcomposer.$(TARGET_PRODUCT)
+    gralloc.rpi3 \
+    hwcomposer.rpi3
 
 # Firmware
 PRODUCT_COPY_FILES += \
@@ -64,7 +64,6 @@ PRODUCT_COPY_FILES += \
 
 # Media
 PRODUCT_COPY_FILES += \
-    device/generic/goldfish/camera/media_profiles.xml:system/etc/media_profiles.xml \
     device/generic/goldfish/camera/media_codecs.xml:system/etc/media_codecs.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
