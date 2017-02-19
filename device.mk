@@ -16,8 +16,10 @@
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
 # Device uses high-density artwork where available
-PRODUCT_AAPT_CONFIG := normal hdpi
-PRODUCT_AAPT_PREF_CONFIG := hdpi
+PRODUCT_AAPT_CONFIG := normal large xlarge mdpi hdpi
+PRODUCT_AAPT_PREF_CONFIG := mdpi
+
+PRODUCT_CHARACTERISTICS := tablet
 
 # Device was launched with M
 PRODUCT_PROPERTY_OVERRIDES += \
