@@ -90,6 +90,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/ueventd.rpi3.rc:root/ueventd.rpi3.rc \
     $(LOCAL_PATH)/fstab.rpi3:root/fstab.rpi3
 
+# Boot
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/boot/config.txt:boot/config.txt
+
+$(call inherit-product, vendor/pifoundation/rpi3/firmware/firmware-vendor.mk)
+
 # Wi-Fi
 PRODUCT_COPY_FILES += \
     hardware/broadcom/wlan/bcmdhd/config/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
