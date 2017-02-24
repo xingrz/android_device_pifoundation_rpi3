@@ -22,11 +22,17 @@ $(call inherit-product, device/pifoundation/rpi3/device.mk)
 # Inherit some common MoKee stuff.
 $(call inherit-product, vendor/mk/config/common_full.mk)
 
-PRODUCT_NAME := mk_rpi3
 PRODUCT_DEVICE := rpi3
-PRODUCT_MANUFACTURER := pifoundation
+PRODUCT_NAME := mk_rpi3
 PRODUCT_BRAND := pifoundation
 PRODUCT_MODEL := Raspberry Pi 3
+PRODUCT_MANUFACTURER := Pi Foundation
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    TARGET_DEVICE="rpi3" \
+    PRODUCT_NAME="rpi3"
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.mk.maintainer=XiNGRZ
+
+TARGET_VENDOR := pifoundation

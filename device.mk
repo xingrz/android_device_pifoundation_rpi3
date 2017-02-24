@@ -21,10 +21,6 @@ PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 PRODUCT_CHARACTERISTICS := tablet
 
-# Device was launched with M
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.product.first_api_level=23
-
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
@@ -51,6 +47,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
 
+# Boot
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/boot/config.txt:boot/config.txt
+
+$(call inherit-product, vendor/pifoundation/rpi3/firmware/firmware-vendor.mk)
+
 # Display
 PRODUCT_PACKAGES += \
     libGLES_mesa \
@@ -63,9 +65,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/firmware/brcm/brcmfmac43430-sdio.txt:root/lib/firmware/brcm/brcmfmac43430-sdio.txt \
     $(LOCAL_PATH)/firmware/brcm/BCM43430A1.hcd:root/lib/firmware/brcm/BCM43430A1.hcd
 
-
 # Media
 PRODUCT_COPY_FILES += \
+    device/generic/goldfish/camera/media_profiles.xml:system/etc/media_profiles.xml \
     device/generic/goldfish/camera/media_codecs.xml:system/etc/media_codecs.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
@@ -89,12 +91,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.usb.rc:root/init.usb.rc \
     $(LOCAL_PATH)/ueventd.rpi3.rc:root/ueventd.rpi3.rc \
     $(LOCAL_PATH)/fstab.rpi3:root/fstab.rpi3
-
-# Boot
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/boot/config.txt:boot/config.txt
-
-$(call inherit-product, vendor/pifoundation/rpi3/firmware/firmware-vendor.mk)
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
