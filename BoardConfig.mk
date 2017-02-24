@@ -31,7 +31,7 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
+# BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 BOARD_KERNEL_CMDLINE := dwc_otg.lpm_enable=0 console=serial0,115200 no_console_suspend root=/dev/ram0 elevator=deadline rootwait androidboot.hardware=rpi3 androidboot.selinux=permissive
 BOARD_RAMDISK_OFFSET     := 0x01f00000
 BOARD_KERNEL_IMAGE_NAME := zImage
