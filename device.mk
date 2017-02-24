@@ -65,6 +65,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/firmware/brcm/brcmfmac43430-sdio.txt:root/lib/firmware/brcm/brcmfmac43430-sdio.txt \
     $(LOCAL_PATH)/firmware/brcm/BCM43430A1.hcd:root/lib/firmware/brcm/BCM43430A1.hcd
 
+# Key Layout
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
+
 # Media
 PRODUCT_COPY_FILES += \
     device/generic/goldfish/camera/media_profiles.xml:system/etc/media_profiles.xml \
